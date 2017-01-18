@@ -8,8 +8,8 @@
  * Controller of the msAppApp
  */
 angular.module('msAppApp')
-  .controller('fichajesPagCtrl', [ '$scope', '$http', '$filter', '$translate', '$timeout', '$ngConfirm','glService', 'crudService', 'selecService', 'staffService', 'uiCalendarConfig',
-    function ($scope, $http, $filter, $translate, $timeout, $ngConfirm,glService, crudService, selecService, staffService, uiCalendarConfig)
+  .controller('fichajesPagCtrl', [ '$scope', '$http', '$filter', '$translate', '$timeout', 'glService', 'crudService', 'selecService', 'staffService', 'uiCalendarConfig',
+    function ($scope, $http, $filter, $translate, $timeout, glService, crudService, selecService, staffService, uiCalendarConfig)
     {
       $scope.gl = glService;
       $scope.crud = crudService;
@@ -126,17 +126,17 @@ angular.module('msAppApp')
 
       $scope.printFichajeTotal = function (fic)
       {
-        var html = '';
+        var str = '';
 
         if(fic)
         {
           if(fic.totalHoras > 0)
-            html += fic.totalHoras.toString() + ' h';
+            str += fic.totalHoras.toString() + ' h';
           if(fic.totalMinutos > 0)
-            html += ' ' + fic.totalMinutos + ' min';
+            str += ' ' + fic.totalMinutos + ' min';
         }
 
-        return html;
+        return str;
       };
 
       $scope.changeFichaje = function (fic)
@@ -183,17 +183,17 @@ angular.module('msAppApp')
         {
           fic.totalStr = '';
         }
-
       };
 
       $scope.calculateNewComplementarias = function (fic)
       {
+        var str = '';
+
         if(fic.horarios && fic.horarios.length > 0)
         {
           var esperado = 0;
           var trabajado = 0;
           var complementarias = 0;
-          var html = '';
 
           for(var x in fic.horarios)
           {
@@ -207,19 +207,19 @@ angular.module('msAppApp')
             complementarias = trabajado-esperado;
 
             var ent = Math.floor(complementarias/60);
-            var dec = complementarias%60
+            var dec = complementarias%60;
 
             if(ent > 0)
-              html += ent + ' h';
+              str += ent + ' h';
             if(dec > 0)
-              html += ' ' + dec + ' min';
+              str += ' ' + dec + ' min';
 
-            fic.compStr = html;
+            fic.compStr = str;
           }
         }
         else
         {
-          fic.compStr = '';
+          fic.compStr = str;
         }
 
       };

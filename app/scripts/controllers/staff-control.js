@@ -12,7 +12,8 @@ angular.module('msAppApp')
 
     $scope.gl = glService;
 
-    glService.actualView = glService.ventanas.auxiliar.fichajes;
-    glService.mensaje = {text : 'Hola'}
+    // glService.actualView = glService.ventanas.auxiliar.fichajes;
+    // glService.mensaje = {text : 'Hola'}
 
+    // $scope.prueba = (glService.actualView == glService.ventanas.auxiliar.fichajes || glService.fondo == glService.ventanas.auxiliar.fichajes);
   }]);

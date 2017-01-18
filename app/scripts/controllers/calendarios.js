@@ -357,7 +357,8 @@ angular.module('msAppApp')
         }, 100)
       };
 
-      var height = document.getElementById('cuerpo').clientHeight * 0.96;
+      // var height = document.getElementById('cuerpo').clientHeight * 0.96;
+      var height = document.getElementById('cuerpo').clientHeight * 1.96;
       $scope.uiConfig = {
         // Calendario horario
         calendar1:{

@@ -15,16 +15,17 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="../bower_components/angular-multiple-date-picker/dist/multipleDatePicker.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.5.0/css/font-awesome.css">
+    <link rel="stylesheet" href="../bower_components/fullcalendar/dist/fullcalendar.min.css">
     <link rel="stylesheet" href="styles/globals.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="msAppApp">
+  <body id="contenedor" ng-app="msAppApp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
+    <div id="cabecera" class="header">
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
           <div class="navbar-header">
@@ -51,9 +52,12 @@
       </div>
     </div>
 
-    <div id="cuerpo" class="container-fluid" ng-cloak>
-    <div ng-view=""></div>
+    <div id="cuerpo" style="overflow: scroll">
+      <div id="container_box" class="container-fluid ng-cloak" >
+        <div ng-view=""></div>
+      </div>
     </div>
+
 
     <!--<div class="footer">-->
       <!--<div class="container">-->
@@ -75,8 +79,8 @@
 
         <!-- build:js(.) scripts/vendor.js -->
         <!-- bower:js -->
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/angular/angular.js"></script>
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <script src="bower_components/angular-animate/angular-animate.js"></script>
         <script src="bower_components/angular-aria/angular-aria.js"></script>

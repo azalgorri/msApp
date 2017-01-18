@@ -8,6 +8,10 @@
     --ms-success-color: green;
 }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 /*MODIFICACIONES DE BOOTSTRAP*/
 *, html	{
     margin: 0;
@@ -96,9 +100,9 @@ tfoot .md-datepicker-input-container{
 tfoot .md-icon-button+.md-datepicker-input-container{
     margin-left: 0;
 }
-#calendario_box md-tabs{
-    min-height: 600px;
-}
+/*#calendario_box md-tabs{*/
+    /*min-height: 600px;*/
+/*}*/
 .fc-content{
     padding: 0;
 }
@@ -675,7 +679,7 @@ tbody .jqx-scheduler-legend-label{
     padding-left: 2%;
 }
 .horasTrabajoTeorico{
-    text-align: right; 
+    text-align: right;
     color: darkgray;
     padding-right: 2%;
 }
@@ -725,7 +729,7 @@ tbody .jqx-scheduler-legend-label{
     font-size: 200%;
 }
 .fc-day-header{
-    font-size: 150%;   
+    font-size: 150%;
 }
 .fc-title{
     font-size: 200%;

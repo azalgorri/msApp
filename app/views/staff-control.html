@@ -1,12 +1,9 @@
-<ms-auxiliar-mensaje model="gl"></ms-auxiliar-mensaje>
-
-
-<div id="container_box" class="container-fluid" data-ng-controller="vendedoresCtrl" style="display: block">
-  <div id="spin_box" class="text-center" data-ng-hide="!gl.loading">
+<div id="container_box" class="container-fluid" data-ng-controller="vendedoresCtrl">
+  <div id="spin_box" class="text-center" data-ng-hide="!gl.loading" style="display: block">
     <img src="../images/spin_5.gif">
   </div>
   <!--<ms-spin-a data-ng-init="gl.loading=true"></ms-spin-a>-->
-  <div id="curtain" data-ng-hide="gl.loading" data-ng-controller="calendariosCtrl"  style="display: none">
+  <div id="curtain" data-ng-hide="gl.loading" data-ng-controller="calendariosCtrl" style="display: none">
 
     <fieldset id="staffControlPrincipal_box"
               data-ng-disabled="gl.fondo == gl.ventanas.principal" data-ng-show="gl.actualView == gl.ventanas.principal">
@@ -358,8 +355,4 @@
     <ms-auxiliar-fichajes model="gl"></ms-auxiliar-fichajes>
     <ms-auxiliar-horario model="gl"></ms-auxiliar-horario>
   </div>
-
-
-
-
-
+</div>

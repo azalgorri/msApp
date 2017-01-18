@@ -28,11 +28,13 @@ angular.module('msAppApp')
       // Show loading spinner.
       $scope.gl.loading = true;
 
-      var res = $scope.crud.execute('read','vendedores', $scope.gl.modulo);
+      // crud
+      // var res = $scope.crud.execute('read','vendedores', $scope.gl.modulo);
+      var res = $http.get('data/find-vendedores.json');
 
-      res.success(function(data, status, headers, config)
+      res.then(function(data, status, headers, config)
       {
-        $scope.gl.data.vendedores = data.vendedores;
+        $scope.gl.data.vendedores = data.data.vendedores;
 
         // Desbloqueamos vista
         $timeout(function () {
@@ -166,8 +168,8 @@ angular.module('msAppApp')
       // Globales y fijas
       // Con esta función vinculamos tb los input a las teclas
       var inputs = document.getElementsByTagName('input');
-      for(var x in inputs)
-        inputs[x].className += " mousetrap";
+      // for(var x in inputs)
+      //   inputs[x].className += " mousetrap";
       Mousetrap.bind('esc', function(e) {
         document.getElementById('salir_btn').click();
       });

@@ -1,0 +1,57 @@
+<div class="row container" name="auxMensaje_box"
+     data-ng-show="model.actualView == model.ventanas.auxiliar.mensaje">
+
+  <style>
+    /*
+    Variables requeriadas
+        --ms-error-color
+        --ms-success-color
+    */
+    div[name="auxMensaje_box"] .auxiliar{
+      width: 75%;
+      left: 12.5%;
+      height: 35%;
+      z-index: 4 !important;
+    }
+    div[name="modalBody_box"]{
+      position: relative;
+    }
+    p[name="mensaje"]{
+      position: absolute;
+      bottom: -12vh;
+      left: 50vh;
+    }
+    div[name="modalBody_box"].errorText{
+      /*color: var(--ms-error-color);*/
+      color: red;
+    }
+    div[name="modalBody_box"].successText{
+      /*color: var(--ms-success-color);*/
+      color: green;
+    }
+    .animate-if.ng-enter, .animate-if.ng-leave {
+      transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+    }
+
+    .animate-if.ng-enter,
+    .animate-if.ng-leave.ng-leave-active {
+      opacity:0;
+    }
+
+    .animate-if.ng-leave,
+    .animate-if.ng-enter.ng-enter-active {
+      opacity:1;
+    }
+  </style>
+  <div class="auxiliar">
+    <div name="modalBody_box" class="row"
+         data-ng-class="{errorText : model.mensaje.type == types.error,
+             successText : model.mensaje.type == types.success}">
+      <p name="mensaje" data-ng-bind="model.mensaje.text"></p>
+    </div>
+  </div>
+</div>
+
+
+
+

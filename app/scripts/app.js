@@ -57,10 +57,10 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
 // Condiguración de la localización
 // Modulo usado: https://angular-translate.github.io/
-app.config(function ($translateProvider)
+.config(function ($translateProvider)
 {
   $translateProvider.translations('es',
     {
@@ -191,8 +191,8 @@ app.config(function ($translateProvider)
     BUTTON_LANG_DE: 'german'
   });
   $translateProvider.preferredLanguage('es');
-});
-app.config(function($datepickerProvider)
+})
+  .config(function($datepickerProvider)
 {
   var fromTenYears = new Date().setFullYear(new Date().getFullYear() - 10);
 

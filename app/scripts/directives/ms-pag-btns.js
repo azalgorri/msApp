@@ -11,7 +11,7 @@ angular.module('msAppApp')
     var directiveDefinitionObject = {
       restrict: "EA",
       replace: true,
-      templateUrl: 'ms-anteriores-posteriores.html'
+      templateUrl: 'scripts/directives/ms-pag-btns.html'
     };
 
     return directiveDefinitionObject;

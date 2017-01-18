@@ -12,7 +12,7 @@ angular.module('msAppApp')
     var directiveDefinitionObject = {
       restrict: "EA",
       replace: true,
-      templateUrl: 'ms-auxiliar-articulo.html',
+      templateUrl: 'scripts/directives/ms-auxiliar-articulo.html',
       scope: {
         model: "="
       },

@@ -190,7 +190,7 @@ angular.module('msAppApp')
               var errores = false;
               var id = '';
 
-              for (var y = 0 in ficDias[x])
+              for (var y in ficDias[x])
               {
                 dateActual = ficDias[x][y].fecha;
 
@@ -224,7 +224,7 @@ angular.module('msAppApp')
               // Usaremos la primera posición
               if(ficDias[x][0])
               {
-                for(var z = 0 in ficDias[x][0].horarios)
+                for(var z in ficDias[x][0].horarios)
                 {
                   esperadoHoras += ficDias[x][0].horarios[z].totalHoras;
                   esperadoMinutos += ficDias[x][0].horarios[z].totalMinutos;

@@ -8,10 +8,11 @@
  * Controller of the msAppApp
  */
 angular.module('msAppApp')
-  .controller('staffControlCtrl', ["glService", function (glService) {
+  .controller('staffControlCtrl', ["$scope", "glService", function ($scope, glService) {
 
     $scope.gl = glService;
-    
+
     glService.actualView = glService.ventanas.auxiliar.fichajes;
-    
+    glService.mensaje = {text : 'Hola'}
+
   }]);

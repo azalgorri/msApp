@@ -13,7 +13,7 @@ angular.module('msAppApp')
     {
       restrict: "EA",
       replace: true,
-      templateUrl: 'ms-auxiliar-mensaje.html',
+      templateUrl: 'scripts/directives/ms-auxiliar-mensaje.html',
       scope: {
         model: "=",
         autoclose: "="

@@ -12,7 +12,7 @@ angular.module('msAppApp')
     var directiveDefinitionObject = {
       restrict: "EA",
       replace: true,
-      templateUrl: 'ms-date-picker.html',
+      templateUrl: 'scripts/directives/ms-date-picker.html',
       scope:{
         model:"="
       }

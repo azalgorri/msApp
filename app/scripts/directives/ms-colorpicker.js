@@ -11,7 +11,7 @@ angular.module('msAppApp')
     var directiveDefinitionObject ={
       restrict:"EA",
       replace : true,
-      templateUrl: 'js/angular-app/templates/colorpicker.html',
+      templateUrl: 'scripts/directives/ms-color-picker.html',
       scope:{
         colors:"=",
         model:"="

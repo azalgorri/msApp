@@ -22,10 +22,7 @@ angular.module('msAppApp')
         data: JSON.stringify(this.ajaxData),
         dataType: 'json',
         contentType: 'application/json'
-      })
-        .error(function(data, status, headers, config) {
-          alert("Ha fallado la petici%oacute;n. Estado HTTP:"+status);
-        });
+      });
 
       return response;
     };
@@ -108,9 +105,6 @@ angular.module('msAppApp')
         data: JSON.stringify(this.ajaxData),
         dataType: 'json',
         contentType: 'application/json'
-      })
-        .error(function(data, status, headers, config) {
-          alert("Ha fallado la peticion. Estado HTTP:"+status);
-        });
+      });
     };
   }]);

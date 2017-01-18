@@ -13,7 +13,7 @@ angular.module('msAppApp')
       var directiveDefinitionObject = {
         restrict: "EA",
         replace: true,
-        templateUrl: 'ms-auxiliar-horario.html',
+        templateUrl: 'scripts/directives/ms-auxiliar-horario.html',
         scope: {
           model: "=",
           datePickerModel: "="

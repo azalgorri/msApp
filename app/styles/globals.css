@@ -1,0 +1,982 @@
+@charset "utf-8";
+
+:root {
+    --ms-body-color: #666666;
+    --ms-blue-color: #336699;
+    --ms-yellow-color: #FFFFCC;
+    --ms-error-color: red;
+    --ms-success-color: green;
+}
+
+/*MODIFICACIONES DE BOOTSTRAP*/
+*, html	{
+    margin: 0;
+    padding: 0;
+}
+thead{
+    font-size: 80%;
+}
+tbody, tfoot{
+    font-size: 70%;
+}
+ul{
+    list-style: none;
+}
+
+a, a:hover{
+    text-decoration: none;
+}
+label{
+    font-weight: 100;
+}
+input[type="text"], input[type="password"], textarea[type="text"]{
+    text-align: left;
+    padding-left: 1% !important;
+}
+[class*="container-fluid"] {
+    padding: 0px !important;
+}
+.h4, h4{
+    font-size: 90%;
+}
+.nav>li>a{
+    padding: 0px;
+}
+
+.sinpadding [class*="col-"] {
+    /*padding-right: 2px;*/
+    /*padding-left: 4px;*/
+}
+
+.disabledLink {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.6;
+}
+.dropdown-menu{
+    font-size: 100%;
+}
+.row{
+    margin-left: 0;
+    margin-right: 0;
+}
+.form-group{
+    margin-bottom: 0;
+}
+.form-group label{
+    padding: 0;
+    padding-right: 5% !important;
+}
+/*MODIFICACIONES DE ANGULARJS*/
+.ngdialog.ngdialog-custom .ngdialog-content {
+    height: 90%;
+}
+img[data-ng-click], img[ng-click], i[data-ng-click], i[ng-click]{
+    cursor: pointer;
+}
+/*formularios*/
+.requiredInput label{
+    color: red;
+}
+.requiredInput input{
+    color: red;
+    border: 1px solid red;
+}
+/*MODIFICACIONES DE ANGULARJS MATERIAL*/
+img:focus {
+    outline: none;
+    border: 0;
+}
+tfoot .md-datepicker-button {
+    display: none;
+}
+tfoot .md-datepicker-input-container{
+    border-bottom: none;
+}
+tfoot .md-icon-button+.md-datepicker-input-container{
+    margin-left: 0;
+}
+#calendario_box md-tabs{
+    min-height: 600px;
+}
+.fc-content{
+    padding: 0;
+}
+.fc-event{
+    border: none !important;
+}
+.vendedorDiv .md-button{
+     min-height: 0;
+     min-width: 0;
+        padding: 0 25%;
+}
+/*Fullcalendar*/
+.fc-left h2{
+    font-size: 110%;
+}
+.fc button .fc-icon{
+     position: inherit !important;
+     top: 0 !important;
+     margin: 0 !important;
+     vertical-align: inherit  !important;
+}
+/*De la librería angular-confirm*/
+.ng-confirm-box{
+    font-family: Tahoma, sans-serif !important;
+}
+
+/************************************/
+/* GENERALES MOBILE STORE */
+
+body{
+    height: 100%;
+    background: #ffffff;
+    color: var(--ms-body-color);
+    font-family: Tahoma, sans-serif !important;
+    font-size: 3vmin;
+}
+
+#contenedor{
+    margin: 0 auto;
+    height: 100vh;
+}
+
+#container_box{
+    margin-bottom: 5%;
+    padding-left: 2% !important;
+}
+
+#cabecera{
+    height: 14%;
+    background-image: url("img/cabecera_1360.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+}
+
+#cuerpo{
+    height: 85%;
+    background: url("img/fondoTPV_1024.jpg") bottom right;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: cover;
+}
+
+#footer{
+    position: fixed;
+    bottom: 0 !important;
+    width: 100%;
+    background: #e2e2e2;
+    opacity: 1;
+    filter: alpha(opacity=60);
+    color: #000;
+    padding: 0.6% 0;
+    z-index: 5;
+}
+#footer .enlace_btn_box{
+    margin-right: 2%;
+}
+#spin_box{
+    padding-top: 10%;
+}
+.customH4{
+    padding-left: 1%;
+    color: #336699;
+    border-bottom: 1px solid #cccccc;
+    line-height: 1.5;
+}
+.blue-text{
+    color: #38659C;
+}
+.yellow-text{
+    color: orange;
+    border-bottom: 1px solid #ebebeb;
+}
+.customLabel{
+    border-bottom: 1px solid #ebebeb;
+}
+.blueMs{
+    background-color: #336699;
+}
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
+/*nav*/
+.customNavBar{
+    background-color: lightgrey;
+    padding-top: 0.5%;
+    padding-left: 0.3%;
+    padding-right: 0.3%;
+}
+.customNavBar .btn-group .btn{
+    border-bottom: none;
+    border-radius: 0%;
+    padding: 10px 35px;
+    background-color: #E1E1E1;
+    border: none;
+}
+.customNavBar .btn-group .btn.active{
+    background-color: white;
+    webkit-box-shadow: none;
+    box-shadow: none;
+}
+.customNavBar .btn-group .btn:hover{
+    background-color: var(--ms-yellow-color);
+}
+.div-inline div{
+    display: inline;
+}
+/**/
+
+@media (min-width: 1360px){
+    #contenedor, #footer{
+        width: 82%;
+    }
+    body{
+        font-size: 2.1vmin;
+    }
+}
+@media (max-width: 1359px) {
+    .container-fluid{
+        margin-bottom: 6%;
+    }
+}
+
+
+/**********************************************************************************************/
+/*HEADER*/
+#datos_cliente_box{
+    color: #2b669a;
+    font-size: 1.65vh;
+}
+
+#contenedor_datos_cabecera{
+    font-family: "Century Gothic", Sans-Serif;
+    padding-top: 1.7%;
+    padding-left: 9%;
+}
+
+/**********************************************************************************************/
+/*LOGIN*/
+#loginForm{
+    margin-top: 8%;
+}
+#aceptarBtn_box{
+    margin-left: 32.5%;
+}
+#aceptar_btn{
+    margin-top: 4%;
+    margin-left: 10%;
+    border: none;
+    width: 59%;
+}
+.infoInput{
+    color: #E6AA33;
+    font-size: 75%;
+    padding-left: 2%;
+}
+/**********************************************************************************************/
+/*MENU*/
+
+#menu_box{
+    position: absolute;
+}
+.menu_opciones_list{
+    margin-bottom: 0.1em;
+    padding-top: 1.2%;
+    padding-left: 3.3%;
+}
+
+.enlace_btn_box{
+    position: relative;
+    height: 100%;
+    margin-bottom: 0.1%;
+    cursor: pointer;
+}
+.enlace_btn_box a{
+    display: inline-block;
+    text-decoration: none;
+}
+.imagen_btn{
+    display: inline-block;
+    cursor: pointer;
+}
+
+.contenido_btn{
+    position: absolute;
+    top: 0.2em;
+    left: 0.8em;
+    color: white;
+    z-index: 1;
+}
+
+.contenido_btn_esc{
+    top: 4%;
+    left: 0.4%;
+}
+
+.nombre_opcion_esc{
+    position: absolute;
+    top: 4%;
+    left: 4%;
+}
+
+.nombre_opcion{
+    padding-left: 0.5em;
+    color: #2e6da4;
+}
+
+.explicacion{
+    padding-left: 0.5em;
+    color: #7F7F7F;
+}
+
+.escape_container {
+    height: 100%;
+}
+.zIndexUp{
+    z-index: 999;
+}
+
+/**********************************************************************************************/
+/*ITEM LOOKUP*/
+
+#localizador_box {
+    color: orange;
+    font-size: 90%;
+}
+#itemLookupPrincipal_box {
+    height: 100%;
+}
+#flechaIZQ_box, #flechaDCH_box{
+    padding-top: 30%;
+}
+#detallesArtic_box div{
+    margin-bottom: 1%;
+}
+#descripcion_box, #texto_descripcion_box{
+    padding-top: 4%;
+}
+#botonesBusqueda_box{
+    margin-bottom: 3%;
+}
+#botonesBusqueda_box div{
+    margin-top: 0.4%;
+}
+#tabla_box{
+    background-color: white;
+    margin-top: 1%;
+    overflow: auto;
+}
+#tabla_box td, #tabla_box thead th{
+    text-align: right !important;
+}
+#tabla_box, #similares_box, #medidas_box{
+    margin-bottom: 3%;
+}
+#tabla_box tfoot{
+    font-size: 75%;
+}
+#imgCuidados img{
+    margin-right: 1%;
+}
+#detallesArtic_box [class*="col-"]{
+    padding-left: 0 !important;
+}
+#idiomaDesc{
+    font-size: 75% !important;
+    float: right;
+    margin-right: 13.5%;
+}
+.circulo:hover, .selec{
+    -ms-transform: scale(1.5, 1.5); /* IE 9 */
+    -webkit-transform: scale(1.5, 1.5); /* Safari */
+    transform: scale(1.5, 1.5);
+}
+.customOption{
+    font-size: 70%;
+}
+.circulo {
+    width: 20px;
+    height: 20px;
+    border: 1px solid darkgray;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #5cb85c;
+}
+.btn_extra{
+    margin-top: -2.4%;
+    padding-right: 4.2%;
+    text-align: right;
+}
+
+/**********************************************************************************************/
+/*ITEM LOOKUP SELECT*/
+/*Pisamos la definición de bootstrap*/
+.table{
+    width: 160%;
+}
+#tabla_seleccion{
+    margin-left: 5%;
+    max-height: 600px;
+}
+#tabla_seleccion thead{
+    color: #336699;
+    font-weight: bold;
+}
+#descripcionArtic, #composicionArtic, #composicionForroArtic{
+    font-size: 82%;
+}
+#foto_seleccion{
+    margin-right: 5%;
+    padding-top: 40%;
+}
+#cuerpo > div.container-fluid{
+    padding-left: 2% !important;
+    margin-bottom: 3%;
+}
+#restoArtic_box{
+    margin-top: 2%;
+}
+#restoArtic_box .customH4[class*="col-"]{
+    padding-left: 0;
+}
+#tabla_box td, #tabla_box thead th{
+    text-align: center;
+}
+#tabla_box td:hover{
+    outline: 2px solid #DCDCDC;
+}
+#reserva_btn_box{
+    padding-top: 3%;
+    padding-right: 3.8%;
+}
+#btns_seleccion{
+    padding-top: 50%;
+}
+.tabla_hover tbody tr:hover, .row_active{
+    background-color: #FFFFCC;
+}
+.table-responsive{
+    margin-left: 0px !important;
+}
+
+/**********************************************************************************************/
+/*VENTANA AUXILIAR Y DE FORMULARIO*/
+
+#itemLookupAuxiliar_box, #auxiliar_box, .auxiliar{
+    color: var(--ms-body-color);
+    background-color: white;
+    position: fixed;
+    bottom: 0%;
+    z-index: 0;
+    -webkit-box-shadow: -1px 0px 27px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 0px 27px 1px rgba(0,0,0,0.75);
+    box-shadow: -1px 0px 27px 1px rgba(0,0,0,0.75);
+}
+#itemLookupAuxiliar_box, #auxiliar_box{
+    width: 68%;
+    height: 50%;
+    left: 16%;
+    padding-top: 3%;
+}
+.auxiliar{
+    width: 78%;
+    left: 11%;
+}
+.customInput{
+    text-align: right;
+    border: none;
+    border-bottom: 1px solid #ebebeb;
+    color: #666666;
+    background-color: #EBEBE4;
+    padding-right: 1% !important;
+}
+.customInput:hover, .customInput:active, .customInput:focus{
+    outline:0px !important;
+    -webkit-appearance:none;
+}
+.lupa{
+    padding-left: 10%;
+}
+#tallaReferenciaInput_box{
+    padding-top: 1%;
+}
+#tallaReferenciaInput_box div{
+    margin-bottom: 5%;
+}
+#errores_box{
+    color: red;
+}
+
+@media (max-width: 1360px){
+    #itemLookupAuxiliar_box, #auxiliar_box, .auxiliar {
+        width: 96%;
+        left: 2%;
+    }
+    #nuevoCliente_btn{
+        padding-left: 4%;
+    }
+}
+
+/**********************************************************************************************/
+/*VALIDACIONES*/
+.customErrorInput{
+    /*border: solid red 1px;*/
+}
+.customErrorMessage{
+    color: red;
+}
+
+/**********************************************************************************************/
+/*STAFF CONTROL*/
+#staffControlPrincipal_box, #descripcion_box, #datosVendedor_box{
+    height: 100%;
+}
+#vendedores_box{
+    padding-top: 1%;
+    padding-bottom: 2%;
+    font-size: 65%;
+}
+#calendario_box{
+    margin-bottom: 10%;
+    padding-right: 5%;
+}
+#calendario_box table{
+    background-color: white;
+}
+#fotoVendedor_box{
+    height: 40%;
+}
+#datos2_box{
+    padding-left: 4%;
+    margin-bottom: 10%;
+    margin-top: 2%;
+}
+#observaciones_box{
+    margin-top: 4%;
+}
+#vendedorBtns_box .enlace_btn_box{
+    margin-bottom: 1%;
+}
+[name="btn_box"]{
+    margin-bottom: 1%;
+}
+#vendedores_box > div{
+    opacity: 0.7;
+}
+#vendedoresDivSubFoto div{
+    margin-bottom: 2%;
+}
+#newVendedor_form [class*="col-"]{
+   padding-left: 0;
+   padding-right: 0;
+}
+#fichajesTabla tfoot tr{
+    background-color: var(--ms-yellow-color);
+}
+#fichajesDetallados_box div[name="pagBtns_box"]{
+    position: fixed;
+    top: 83%;
+    left: 76.2%;
+    padding-right: 2.5%;
+}
+.vendedorMas img:hover{
+    opacity: 0.5;
+}
+.vendedorDiv{
+    padding: 1% !important;
+    margin-right: 1%;
+}
+.vendedorDiv img[class*="img-responsive"]{
+    padding-bottom: 5%;
+}
+.vendedorDiv p{
+    padding-left: 5%;
+}
+.vendedorDiv:hover, .focusedVendedor{
+    opacity: 1 !important;
+    outline: #FF4081 1px solid !important;
+}
+.selectedVendedor{
+    background-color: #e2e2e2;
+    color: black;
+}
+.vendedorColor_box{
+    padding-top: 2%;
+}
+.vendedorColor_box, .vendedorNombre_box span{
+    padding-left: 0;
+    padding-right: 0;
+}
+.vendedorColor{
+    width: 2em;
+    height: 1em;
+}
+[data-focus="true"]{
+    background-color: #7291CA;
+}
+[name="tick"]{
+    z-index: 2;
+    position: absolute;
+    top: 86%;
+    right: 6%;
+}
+[data-tick="true"]{
+    background-color: #FFFFCC;
+}
+[data-dismiss="modal"]{
+    /*font-size: 300%;*/
+}
+img[name="cerrarModal"]{
+    margin-right: 1%;
+    margin-left: 1%;
+}
+/*Tab del calendario la ventana emergente*/
+#fichajesGeneral_box{
+    padding: 2%;
+}
+/*Tab de los fichajes en la ventana emergente*/
+#fichajesDetallados_box{
+    padding: 2%;
+}
+.vendedorDiv:focus{
+    outline: none;
+    border: none;
+}
+.customAppointment{
+    width: 10%;
+}
+.modal-dialog{
+    width: 78%;
+    left: 0%;
+}
+.modal-body{
+    padding-left: 2%;
+}
+.modal-body{
+    font-family: Century Gothic, sans-serif !important;
+}
+.nav>li>a[data-toggle="tab"]{
+    padding-left: 35% !important;
+    padding-right: 35% !important;
+}
+.jqx-scheduler-cell-selected{
+    background: white !important;
+    border-color: white !important;
+}
+.jqx-fill-state-pressed{
+    background: white !important;
+}
+tbody .jqx-scheduler-legend-label{
+    padding-left: 2%;
+}
+.horasTrabajoTeorico{
+    text-align: right; 
+    color: darkgray;
+    padding-right: 2%;
+}
+.textoDiarioLab{
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+.fichajeErroneo{
+    background-color: #c1c1c1;
+}
+.descanso{
+    background-color: #cbf2a7;
+}
+
+/*CALENDAR*/
+#calendar1_box, #calendar2_box {
+    background-color: white;
+}
+.fc-toolbar{
+    padding-top: 1.2%;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+}
+.fc-toolbar, .fc-day-header{
+    text-transform: capitalize;
+}
+/*Formateo de lacabecera de los calendarios*/
+.fc button{
+    height: 1.5em !important;
+    padding: 0 .4em !important;
+}
+.fc-icon{
+    height: 2.5vh !important;
+}
+.fc-day-number{
+    font-size: 150%;
+}
+.fc-content{
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+.fc-event-container .fc-time{
+    display: none;
+}
+.fc-axis{
+    width: 150%;
+    font-size: 200%;
+}
+.fc-day-header{
+    font-size: 150%;   
+}
+.fc-title{
+    font-size: 200%;
+}
+.registroErroneo{
+    color: white;
+    width: 10%;
+}
+.registroErroneo .fc-title{
+    margin-left: 10%;
+    font-size: 300% !important;
+}
+.horasTrabajoTeoricas{
+    width: 10%;
+}
+.vacaciones{
+    height: 1.5vmin;
+}
+.horasTrabajoReales .fc-title{
+    margin-left: 27%;
+    font-size: 300% !important;
+    pointer-events: none;
+    cursor: default;
+}
+.horasTrabajoSupuestas .fc-title{
+    margin-left: 80%;
+}
+.customEvent{
+    height: 9vh;
+}
+.trabajado{
+    height: 45%;
+    font-size: 310%;
+    padding: 5% 2%;
+    text-align: center;
+}
+.esperado{
+    font-size: 210%;
+    text-align: right;
+    padding-right: 4%;
+}
+.tiempoExtra{
+    background-color: cornflowerblue;
+}
+.tiempoEsperado{
+    background-color: grey;
+}
+.tiempoInferior{
+    background-color: palevioletred;
+}
+.fichajeErrors span{
+    font-size: 250%;
+    bottom: 0%;
+    left: 7%;
+    position: absolute;
+}
+/**********************************************************************************************/
+/*CLIENT DASHBOARD*/
+#buscarCliente_box{
+    margin-bottom: 3%;
+}
+#criterio_box .form-control{
+    height: 2%;
+    font-size: 75%;
+    padding: 1.3% 6%;
+}
+#pagBtn_box{
+    position: fixed;
+    top: 60%;
+    left: -2%;
+}
+#clientesPag_box{
+    margin-top: 2%;
+}
+#clientesPag{
+    padding-left: 2%;
+    margin-bottom: 1%;
+}
+#clientesPagBtns_box{
+    padding-right: 5%;
+}
+#anteriores_btn img, #siguientes_btn img{
+    padding-bottom: 5%;
+}
+#clientesPagLetras_box [class*="col-"]{
+    padding-left: 0;
+}
+#clientesPagLetras_box .enlace_btn_box{
+    margin-bottom: 1.8%;
+    margin-right: 1%;
+}
+#nuevoCliente_btn{
+    padding-left: 21%;
+}
+#datePickers_box{
+    color: darkgray;
+    font-size: 80%;
+}
+#datePickers_box .btn{
+    font-size: 100%;
+}
+#labelModal{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+#vpr_box table{
+    background-color: white;
+}
+#vprModalDesc_box{
+    padding-top: 2%;
+    font-size: 70%;
+}
+#vprModalFotos_mini{
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: -2.5%;
+}
+#vprTotal_box{
+    position: fixed;
+    bottom: 10%;
+    left: -17.6%;
+    font-size: 110%;
+    font-weight: bold;
+    background-color: white;
+}
+#newCliente_form [class*="col-"]{
+    padding-left: 0;
+    padding-right: 0;
+}
+#clientesPag_box div[name="pagBtns_box"]{
+    padding-right: 3.2%;
+}
+#vpr_box div[name="pagBtns_box"]{
+    padding-right: 8.7%;
+}
+#calendario_box tbody, #calendario_box tfoot{
+    font-size: 60%;
+}
+#calendario_box thead{
+    font-size: 70% !important;
+}
+div[name="modalBody_box"]{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.minSelected{
+    opacity: 0.7;
+}
+.clientBox {
+    background-color: white;
+    margin: 0.4%;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 22%;
+    min-height: 60px;
+    color: #7F7F7F;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    -webkit-box-shadow: 4px 4px 7px 2px rgba(0,0,0,0.2) ;
+    box-shadow: 4px 4px 7px 2px rgba(0,0,0,0.2) ;
+    outline: none !important;
+    padding: 1%;
+
+    /*Degradado*/
+    background: #ffffff;
+    background: -moz-linear-gradient(-45deg, #ffffff 0%, #ffffff 0%, #ffffff 47%, #f2f2f2 80%, #f2f2f2 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, #ffffff), color-stop(0%, #ffffff), color-stop(47%, #ffffff), color-stop(80%, #f2f2f2), color-stop(100%, #f2f2f2));
+    background: -webkit-linear-gradient(-45deg, #ffffff 0%, #ffffff 0%, #ffffff 47%, #f2f2f2 80%, #f2f2f2 100%);
+    background: -o-linear-gradient(-45deg, #ffffff 0%, #ffffff 0%, #ffffff 47%, #f2f2f2 80%, #f2f2f2 100%);
+    background: -ms-linear-gradient(-45deg, #ffffff 0%, #ffffff 0%, #ffffff 47%, #f2f2f2 80%, #f2f2f2 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #ffffff 0%, #ffffff 47%, #f2f2f2 80%, #f2f2f2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2', GradientType=1 );
+}
+
+.azulCliente{
+    color: #336699;
+    font-size: 75%;
+    text-transform: capitalize;
+    margin-bottom: 2%;
+}
+.grisCliente{
+    color: #7F7F7F;
+    font-size: 58%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.letraBtn{
+    margin-bottom: 2%;
+}
+.disabledClick{
+    pointer-events:none;
+}
+.disabledBtn{
+    pointer-events:none;
+    display: none;
+}
+.fotoMiniatura{
+    margin-right: -3%;
+    cursor: pointer;
+}
+.labelModal{
+    font-weight: bold;
+}
+/************************************ COMPARTIDO **********************************************/
+.clientBox:focus, .clientBox:hover, .focusedClientBox, .vendedorDiv:hover{
+    outline: #FF4081 1px solid !important;
+}
+.noFocusedClientBox, .noFocused{
+    outline: none !important;
+}
+/**********************************************************************************************/
+
+
+.animate-if.ng-enter, .animate-if.ng-leave {
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.animate-if.ng-enter,
+.animate-if.ng-leave.ng-leave-active {
+    opacity:0;
+}
+
+.animate-if.ng-leave,
+.animate-if.ng-enter.ng-enter-active {
+    opacity:1;
+}
+
+.funky-show-hide.ng-hide-add {
+    transform: rotateZ(0);
+    transform-origin: right;
+    transition: all 0.5s ease-in-out;
+}
+
+.funky-show-hide.ng-hide-add.ng-hide-add-active {
+    transform: rotateZ(-135deg);
+}
+
+.funky-show-hide.ng-hide-remove {
+    transform: rotateY(90deg);
+    transform-origin: left;
+    transition: all 0.5s ease;
+}
+
+.funky-show-hide.ng-hide-remove.ng-hide-remove-active {
+    transform: rotateY(0);
+}
+
+.check-element {
+    border: 1px solid black;
+    opacity: 1;
+    padding: 10px;
+}

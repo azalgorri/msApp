@@ -1,0 +1,132 @@
+<div class="row container"
+     data-ng-show="model.actualView == model.ventanas.auxiliar.horario || model.fondo == model.ventanas.auxiliar.horario"
+     data-ng-disabled="model.fondo == model.ventanas.auxiliar.horario">
+
+  <style>
+    /*
+    Variables requeriadas
+        --ms-blue-color
+    */
+
+    #horarioEdition_box{
+      height: 70%;
+      padding-left: 2%;
+    }
+    #horarioEdition_box .datepicker{
+      border: none;
+      box-shadow: none;
+    }
+    #horarioEdition_box bs-datepicker[bs-show] .datepicker.dropdown-menu,
+    #horarioEdition_box bs-datepicker[bs-show] + .datepicker.dropdown-menu,
+    #horarioEdition_box bs-datepicker[data-bs-show] .datepicker.dropdown-menu,
+    #horarioEdition_box bs-datepicker[data-bs-show] + .datepicker.dropdown-menu {
+      position: relative;
+      top: 0 !important;
+      left: 0 !important;
+      padding: 2%;
+    }
+    #div_opciones{
+      margin-top: 3%;
+    }
+    #diasCheck_box label{
+      padding-left: 6.3%;
+      padding-right: 0 !important;
+    }
+    #horarioEdition_box .picker-selected{
+      background-color: var(--ms-blue-color) !important;
+      color: white;
+    }
+    #horarioEdition_box .div_vacaciones{
+      background-color: darkseagreen !important;
+      color: white;
+    }
+    #horarioEdition_box .div_horarios{
+      background-color: var(--ms-selected-color) !important;
+      color: white;
+    }
+  </style>
+
+
+  <div id="horarioEdition_box" class="auxiliar">
+    <div name="modalBody_box" class="row">
+      <div class="col-xs-4">
+        <multiple-date-picker
+          data-ng-model="myArrayOfDates"
+          show-days-of-surrounding-months="false"
+          fire-events-for-days-of-surrounding-months="true"
+          css-days-of-surrounding-months="'picker-other-month-custom'"
+          highlight-days="highlightDays">
+        </multiple-date-picker>
+        <!-- Opciones sobre el calendario -->
+        <div class="form-group" id="div_opciones">
+          <div id="diasCheck_box">
+            <label class="checkbox-inline">
+              <input name="checkbox" type="checkbox" value="sab"
+                     data-ng-model="toggleDays.lun"
+                     data-ng-click="todosDias()"/>
+              lu
+            </label>
+            <label class="checkbox-inline">
+              <input name="checkbox" type="checkbox" value="dom"
+                     data-ng-model="toggleDays.mar"
+                     data-ng-click="todosDias()"/>
+              ma
+            </label>
+            <label class="checkbox-inline">
+              <input name="checkbox" type="checkbox" value="sab"
+                     data-ng-model="toggleDays.mie"
+                     data-ng-click="todosDias()"/>
+              mi
+            </label>
+            <label class="checkbox-inline">
+              <input name="checkbox" type="checkbox" value="dom"
+                     data-ng-model="toggleDays.juv"
+                     data-ng-click="todosDias()"/>
+              ju
+            </label>
+            <label class="checkbox-inline">
+              <input name="checkbox" type="checkbox" value="dom"
+                     data-ng-model="toggleDays.vie"
+                     data-ng-click="todosDias()"/>
+              vi
+            </label>
+            <label class="checkbox-inline">
+              <input name="checkbox" type="checkbox" value="sab"
+                     data-ng-model="toggleDays.sab"
+                     data-ng-click="todosDias()"/>
+              s&aacute;
+            </label>
+            <label class="checkbox-inline">
+              <input name="checkbox" type="checkbox" value="dom"
+                     data-ng-model="toggleDays.dom"
+                     data-ng-click="todosDias()"/>
+              do
+            </label>
+          </div>
+        </div>
+        <div class="form-group div-inline">
+          <div>
+            <button class="btn btn-primary btn-sm" name="submit" type="submit"
+                    data-ng-click="todosDias()">
+              Todos los D&iacute;as
+            </button>
+          </div>
+          <div>
+            <button class="btn btn-primary btn-sm" name="submit" type="submit"
+                    data-ng-click="resetDays()">
+              Borrar d&iacute;as
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-8">
+        <!--<div data-ng-repeat="d in myDates">-->
+        <!--<div data-ng-bind="d"></div>-->
+        <!--</div>-->
+        <ms-date-picker model="datePickerModel"></ms-date-picker>
+      </div>
+    </div>
+
+  </div>
+</div>
+

@@ -1,0 +1,44 @@
+<div>
+  <style>
+    div[name="desdeHasta"] .form-control{
+      height: 20px;
+      padding: 0px;
+      font-size: 12px;
+    }
+    form[name="datepickerForm"] .dropdown-menu{
+      max-width: 350px !important;
+      min-width: 350px !important;
+    }
+    form[name="datepickerForm"] input[type="text"]{
+      text-align: center;
+    }
+    form[name="datepickerForm"] span[translate*="loc_"]{
+      font-size: 95%;
+    }
+  </style>
+  <div name="datePicker" data-ng-controller="datePickerCtrl">
+    <form name="datepickerForm" class="form-inline" role="form">
+      <div>
+        <div class="col-xs-12">
+          <div class="col-xs-3">
+            <label></label>
+          </div>
+          <div class="col-xs-2 text-right">
+            <i class="fa fa-calendar"></i>
+          </div>
+          <div class="col-xs-5 text-left">
+            <div class="form-group" data-ng-class="{'has-error': datepickerForm.desde.$invalid}">
+              <input type="text" class="form-control text-center" name="desde"
+                     data-placement="right"
+                     data-ng-model="model.desde"
+                     data-date-format="dd-MM-yyyy"
+                     data-date-type="number"
+                     data-autoclose="1" bs-datepicker>
+              <!--data-ng-change="completeObj($event)"-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -8,7 +8,7 @@
  * Service in the msAppApp.
  */
 angular.module('msAppApp')
-  .service('staffControl', ["$filter", "$translate", "$timeout", "glService", "crudService", "selecService", "formatService",
+  .service('staffService', ["$filter", "$translate", "$timeout", "glService", "crudService", "selecService", "formatService",
     function ($filter, $translate, $timeout, glService, crudService, selecService, formatService)
     {
       var staff = this;

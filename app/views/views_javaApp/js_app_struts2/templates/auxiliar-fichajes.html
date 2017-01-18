@@ -1,0 +1,150 @@
+<div class="row container"
+     data-ng-show="model.actualView == model.ventanas.auxiliar.fichajes || model.fondo == model.ventanas.auxiliar.fichajes"
+     data-ng-disabled="model.fondo == model.ventanas.auxiliar.fichajes">
+
+        <div class="auxiliar" style="height: 95%"
+             data-ng-controller="fichajesPagCtrl">
+
+            <div class="row">
+                <div id="auxiliarFichajes_box">
+
+                    <div class="customNavBar">
+                        <div class="btn-group" ng-model="gl.scopes.fichajes.currentTab" bs-radio-group>
+                            <label class="btn btn-default active"
+                                   data-ng-click="gl.scopes.fichajes.currentTab = 0">
+                                <input type="radio" class="btn btn-default" value="0">
+                                <span translate="loc_General"></span>
+                            </label>
+                            <label class="btn btn-default" data-ng-click="gl.scopes.fichajes.currentTab = 1">
+                                <input type="radio" class="btn btn-default" value="1">
+                                <span translate="loc_Detallado"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="fichajesGeneral_box"
+                         data-ng-show="gl.scopes.fichajes.currentTab == 0">
+                        <div id="calendar3" class="calendar" ng-model="gl.scopes.calendarios.eventSources3"
+                             calendar="calendar3"
+                             config="gl.scopes.calendarios.uiConfig.calendar3"
+                             ui-calendar="gl.scopes.calendarios.uiConfig.calendar3">
+                        </div>
+                    </div>
+
+                    <div id="fichajesDetallados_box" class="row"
+                         data-ng-show="gl.scopes.fichajes.currentTab == 1">
+                        <div class="col-xs-10 yellow-text">
+                            <span data-ng-bind="gl.vendedor.nombre"></span>
+                        </div>
+                        <br/><br/>
+                        <ms-desde-hasta class="col-md-12"></ms-desde-hasta>
+                        <br/><br/>
+                        <div class="col-xs-12" data-ng-init="fichajesChanged = false">
+                            <table id="fichajesTabla" class="table tabla_hover">
+                                <thead>
+                                <tr>
+                                    <td data-ng-repeat="col in theadCols" data-ng-bind="col"></td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr data-ng-repeat="obj in filteredData = ( data | filter: filtroJornada | startFromGrid: currentPage * pageSize | limitTo: pageSize)"
+                                    data-ng-click="" data-ng-class="{fichajeErroneo : (!obj.entrada || !obj.salida), descanso : (obj.tipoInteger != 0 && obj.tipoInteger != 1)}">
+                                    <td data-ng-bind="obj.fecha | date:'dd-MM-yyyy'"></td>
+                                    <td data-ng-bind="obj.tipo"></td>
+                                    <td>
+                                        <input type="text" size="2"
+                                               data-ng-model="obj.jsEntrada" data-ng-change="changeFichaje(obj)"
+                                               bs-timepicker
+                                               data-time-format="HH:mm" data-length="1" data-minute-step="1"
+                                               data-placement="top"
+                                               data-arrow-behavior="picker"
+                                               required>
+                                    </td>
+                                    <td>
+                                        <input type="text" size="2"
+                                               data-ng-model="obj.jsSalida" data-ng-change="changeFichaje(obj)"
+                                               bs-timepicker name="time"
+                                               data-time-format="HH:mm" data-length="1" data-minute-step="1"
+                                               data-placement="top"
+                                               data-arrow-behavior="picker"
+                                               required>
+                                    </td>
+                                    <td data-ng-bind="obj.totalStr"
+                                        data-ng-init="calculateNewTotal(obj)"></td>
+                                    <td data-ng-bind="obj.compStr"
+                                        data-ng-init="calculateNewComplementarias(obj)"></td>
+                                    <td>
+                                        <i class="fa fa-trash fa-lg" aria-hidden="true"
+                                           data-ng-click="confirmDeleteFichaje($event, obj)"></i>
+                                        <!--<img name="deleteFichaje_img" src="images/icons/ic_delete_black_18dp_1x.png"-->
+                                             <!--data-ng-click="confirmDeleteFichaje($event, obj)">-->
+                                    </td>
+                                </tr>
+                                </tbody>
+                                <tfoot data-ng-if="newFichaje">
+                                <tr>
+                                    <td data-ng-controller="datePickerCtrl" style="width: 15.9%;">
+                                        <form name="newFecha_form"
+                                              data-ng-class="gl.validateInput(newFecha_form.newFecha)">
+                                            <input type="text" name="newFecha"
+                                                   data-ng-model="gl.scopes.fichajes.newFic.fecha"
+                                                   data-date-format="dd-MM-yyyy"
+                                                   data-date-type="number"
+                                                   data-placement="top"
+                                                   data-autoclose="1" bs-datepicker>
+                                        </form>
+                                    </td>
+                                    <td><span data-ng-bind="loc.Trabajo" data-ng-model="newFic.tipo"></span></td>
+                                    <td>
+                                        <form name="newEntrada_form" novalidate
+                                              data-ng-class="gl.validateInput(newEntrada_form.entrada)">
+                                            <input type="text" size="2" name="entrada" bs-timepicker
+                                                   data-ng-model="newFic.jsEntrada"
+                                                   data-ng-change="changeFichaje(newFic)"
+                                                   data-time-format="HH:mm" data-length="1" data-minute-step="1"
+                                                   data-placement="top"
+                                                   data-arrow-behavior="picker"
+                                                   required>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form name="newSalida_form" novalidate
+                                              data-ng-class="gl.validateInput(newSalida_form.salida)">
+                                            <input type="text" size="2" name="salida" bs-timepicker
+                                                   data-ng-model="newFic.jsSalida"
+                                                   data-ng-change="changeFichaje(newFic)"
+                                                   data-time-format="HH:mm" data-length="1" data-minute-step="1"
+                                                   data-placement="top"
+                                                   data-arrow-behavior="picker"
+                                                   required>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <div data-ng-bind="newFic.totalStr"></div>
+                                    </td>
+                                    <td>
+                                        <div data-ng-bind="newFic.compStr"></div>
+                                    </td>
+                                    <td>
+                                        <i class="fa fa-floppy-o fa-lg" aria-hidden="true"
+                                           data-ng-if="newEntrada_form.entrada.$valid && newSalida_form.salida.$valid && newFic.totalStr != ''"
+                                           data-ng-click="saveNewFichaje(newFic)"></i>
+
+                                        <!--<img src="images/icons/ic_save_black_24dp_1x.png"-->
+                                             <!--data-ng-if="newEntrada_form.entrada.$valid && newSalida_form.salida.$valid && newFic.totalStr != ''"-->
+                                             <!--data-ng-click="saveNewFichaje(newFic)">-->
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <br/><br/>
+                        <ms-pag-btns class="col-xs-12"></ms-pag-btns>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+

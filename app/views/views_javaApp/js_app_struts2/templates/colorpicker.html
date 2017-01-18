@@ -1,0 +1,25 @@
+<div class="colorPicker_box row">
+    <style>
+        .oneColor
+        {
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            opacity: 0.2;
+        }
+        .oneColor:hover
+        {
+            opacity: 1;
+            /*border: 1px solid red;*/
+        }
+        .selectedOneColor{
+            opacity: 1;
+        }
+    </style>
+    <div class="oneColor"
+         data-color="{{c}}"
+         data-ng-repeat="c in colors"
+         data-ng-style="{'background-color' : '#{{c}}'}"
+         data-ng-click="selectColor($event)">
+    </div>
+</div>

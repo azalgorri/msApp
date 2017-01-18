@@ -1,0 +1,20 @@
+<div>
+    <style>
+        div[name="pagBtns_box"] img{
+            float: right;
+            margin-left: 2px;
+        }
+    </style>
+    <div name="pagBtns_box">
+        <!-- Navegar hacia adelante-->
+        <div name="siguientes_btn" data-ng-class="currentPage >= ((dData) ? dData.length/pageSize - 1 : data.length/pageSize - 1) && 'disabledBtn'">
+            <img class="imagen_btn" src="images/base/boton_mostrar_sig.png" alt="" ng-click='currentPage = currentPage + 1'>
+        </div>
+        <!-- Navegar hacia atrás -->
+        <div name="anteriores_btn" data-ng-class="currentPage == 0 && 'disabledBtn'">
+            <img class="imagen_btn" src="images/base/boton_mostrar_ant.png" alt="" ng-click='currentPage = currentPage - 1'>
+        </div>
+    </div>
+</div>
+
+

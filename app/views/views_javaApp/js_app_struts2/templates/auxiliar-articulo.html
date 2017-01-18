@@ -1,0 +1,47 @@
+<div class="row container"
+     data-ng-if="model.actualView == model.ventanas.auxiliar.articulo || model.fondo == model.ventanas.auxiliar.articulo"
+     data-ng-disabled="model.fondo == model.ventanas.auxiliar.articulo">
+
+        <div class="auxiliar" style="height: 60%">
+
+            <div name="modalBody_box" class="row">
+                <div id="vprModalDesc_box" class="col-xs-7">
+                    <p>
+                        <span class="labelModal" translate="loc_Articulo"></span><span>: </span>
+                        <span data-ng-bind="model.scopes.vpr.articulo.familia"></span> - <span class="yellow-text" data-ng-bind="model.scopes.vpr.articulo.localizador"></span>
+                    </p>
+                    <p>
+                        <span class="labelModal" translate="loc_Modelo"></span><span>: </span>
+                        <span data-ng-bind="model.scopes.vpr.articulo.modelo"></span>
+                    </p>
+                    <p>
+                        <span class="labelModal" translate="loc_Color"></span><span>: </span>
+                        <span data-ng-bind="model.scopes.vpr.articulo.color"></span>
+                    </p>
+                    <p>
+                        <span class="labelModal" translate="loc_Temporada"></span><span>:</span>
+                        <span data-ng-bind="model.scopes.vpr.articulo.temporada"></span>
+                    </p>
+                    <p>
+                        <span class="labelModal" translate="loc_Descripcion"></span><span>:</span>
+                        <span data-ng-bind="model.scopes.vpr.articulo.descripcion"></span>
+                    </p>
+                    <br/>
+                </div>
+                <div id="vprModalFotos_box" class="col-xs-5 row">
+                    <div id="vprModalFotos_principal" class="col-xs-offset-1 col-xs-8 reset">
+                        <img class="img-responsive thumbnail" src="http://{{model.imgURL}}/TwisterWeb/ServletImg?artic={{model.scopes.vpr.articulo.id}}&wmin=330&hmin=400&index={{fotoIndex}}" alt="">
+                    </div>
+                    <div id="vprModalFotos_mini" class="col-xs-1 reset">
+                        <div class="fotoMiniatura" data-ng-repeat="(key, value) in model.scopes.vpr.articulo.fotos" >
+                            <img class="img-responsive center-block thumbnail" data-ng-click="selecFoto(key)" data-ng-class="fotoIndex == key && 'minSelected'"
+                                 src="http://{{model.imgURL}}/TwisterWeb/ServletImg?artic={{model.scopes.vpr.articulo.id}}&wmin=330&hmin=400&index={{key}}" alt=""/>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </div>
+</div>
+
+
+

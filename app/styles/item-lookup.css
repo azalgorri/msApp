@@ -1,0 +1,49 @@
+/************** GLOBALS *******************/
+@font-face{
+    font-family: "Custom Gothic";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/GOTHIC.TTF");
+}
+
+.noPadding [class*="col-"] {
+    padding: 0;
+}
+
+#bg {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+/************** LAYOUT *******************/
+
+#fotos_box{
+    height: 80%
+}
+#flechaIZQ_box, #flechaDCH_box {
+    height: 80%;
+    padding-top: 40%;
+    padding-left: 5%;
+}
+#fotoGrande_box {
+    height: 80%
+}
+#fotosMini_box {
+    height: 20%;
+    padding-left: 5%;
+}
+#itemTopRight_box{
+    height: 100%;
+}
+
+    /*FOOTER*/
+#footer_box { height: 5.3%; }
+    #escape_box {
+        margin-left: 1.5%;
+    }
+    
+
+
+

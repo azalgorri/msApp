@@ -6,6 +6,7 @@
     <file url="file://$PROJECT_DIR$/__JavaApp__/web/bootstrap/EasyZoom/css/pygments.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/__JavaApp__/web/bootstrap/EasyZoom/test/lib/jquery-1.10.2.min.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/__JavaApp__/web/bootstrap/EasyZoom/test/lib/sinon-1.7.3.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/fonts" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/images/base" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/images/client-dashboard" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/images/icons" charset="windows-1252" />
@@ -15,6 +16,10 @@
     <file url="file://$PROJECT_DIR$/app/images/spins" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/images/staff-control" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/styles/globals.css" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/styles/img" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/styles/item-lookup.css" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/styles/jquery-ui.min.css" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/styles/tpv.css" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/views/views_javaApp" charset="windows-1252" />
   </component>
 </project>

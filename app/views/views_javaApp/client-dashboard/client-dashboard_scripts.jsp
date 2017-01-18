@@ -1,0 +1,1 @@
+<%@include file="/views/base/partialViews/angular_app.jsp" %>
